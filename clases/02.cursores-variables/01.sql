@@ -1,0 +1,26 @@
+SET SERVEROUT ON;
+DECLARE 
+    TYPE CURSOR_VARIABLE IS REF CURSOR;
+    V1 CURSOR_VARIABLE;
+    X1 CURSOR_VARIABLE;
+    
+    empleados_array EMPLEADOS%ROWTYPE;
+    notas_array NOTAS%ROWTYPE;
+BEGIN
+    OPEN V1 FOR SELECT * FROM EMPLEADOS;
+    FETCH V1 INTO empleados_array;
+    
+    DBMS_OUTPUT.PUT_LINE('EMPLEADOS: ');
+    DBMS_OUTPUT.PUT_LINE(empleados_array.NOMBRE);
+    
+    CLOSE V1;
+    
+    OPEN V1 FOR SELECT * FROM NOTAS;
+    FETCH V1 INTO notas_array;
+    
+    DBMS_OUTPUT.PUT_LINE('NOTAS: ');
+    DBMS_OUTPUT.PUT_LINE(notas_array.NOMBRE);
+    
+    CLOSE V1;
+END;
+/
