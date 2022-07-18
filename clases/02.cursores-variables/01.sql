@@ -11,7 +11,11 @@ BEGIN
     FETCH V1 INTO empleados_array;
     
     DBMS_OUTPUT.PUT_LINE('EMPLEADOS: ');
-    DBMS_OUTPUT.PUT_LINE(empleados_array.NOMBRE);
+    WHILE V1%FOUND 
+        LOOP
+            DBMS_OUTPUT.PUT_LINE(empleados_array.NOMBRE);
+        FETCH V1 INTO empleados_array;
+    END LOOP;
     
     CLOSE V1;
     
@@ -19,8 +23,11 @@ BEGIN
     FETCH V1 INTO notas_array;
     
     DBMS_OUTPUT.PUT_LINE('NOTAS: ');
-    DBMS_OUTPUT.PUT_LINE(notas_array.NOMBRE);
-    
+    WHILE V1%FOUND 
+        LOOP
+            DBMS_OUTPUT.PUT_LINE(notas_array.NOMBRE);
+        FETCH V1 INTO notas_array;
+    END LOOP;    
     CLOSE V1;
 END;
 /
