@@ -1,0 +1,21 @@
+SET SERVEROUT ON;
+DECLARE 
+    TYPE CURSOR_VARIABLE IS REF CURSOR RETURN EMPLEADOS%ROWTYPE;
+    V1 CURSOR_VARIABLE;
+    X1 CURSOR_VARIABLE;
+    
+    empleados_array EMPLEADOS%ROWTYPE;
+BEGIN
+    OPEN V1 FOR SELECT * FROM EMPLEADOS;
+    FETCH V1 INTO empleados_array;
+    
+    DBMS_OUTPUT.PUT_LINE('1: ');
+    WHILE V1%FOUND 
+        LOOP
+            DBMS_OUTPUT.PUT_LINE(empleados_array.NOMBRE);
+        FETCH V1 INTO empleados_array;
+    END LOOP;
+    
+    CLOSE V1;
+END;
+/
