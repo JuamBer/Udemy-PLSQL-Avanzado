@@ -1,4 +1,4 @@
-# Curso De Oracle PL/SQL avanzado
+# Curso De Oracle PL/SQL Avanzado
 
 Material realizado en el curso de "Oracle PL/SQL avanzado" de [Udemy](https://www.udemy.com/course/aprende-oracle-plsql-avanzado/)
 
