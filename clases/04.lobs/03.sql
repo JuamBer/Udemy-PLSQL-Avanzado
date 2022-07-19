@@ -1,0 +1,2 @@
+CREATE OR REPLACE DIRECTORY FICHEROS AS 'C:\Users\jsaez\Documents\ficheros_lob';
+SELECT * FROM ALL_DIRECTORIES;
